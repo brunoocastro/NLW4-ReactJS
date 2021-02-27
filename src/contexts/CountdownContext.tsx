@@ -28,7 +28,7 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
   const { startNewChallenge } = useContext(ChallengesContext);
 
   //Valor inicial de tempo
-  let initTimeValue = 0.05;
+  let initTimeValue = 25;
 
   const [time, setTime] = useState(initTimeValue * 60);
   const [isActive, setIsActive] = useState(false);
