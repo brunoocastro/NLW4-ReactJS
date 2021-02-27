@@ -9,9 +9,11 @@ import { Profile } from "../components/Profile";
 
 import styles from "../styles/pages/Home.module.css";
 
-
 import { ChallengeBox } from "../components/ChallengeBox";
-import { CountdownContext } from "../contexts/CountdownContext";
+import {
+  CountdownContext,
+  CountdownProvider,
+} from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
 
 interface HomeProps {
@@ -20,7 +22,7 @@ interface HomeProps {
   challengesCompleted: number;
 }
 
-export default function Home(props) {
+export default function Home(props: HomeProps) {
   console.log(props);
 
   const { minutes, seconds, isActive } = useContext(CountdownContext);
@@ -40,17 +42,20 @@ export default function Home(props) {
 
         <ExperienceBar />
 
-        <section>
-          <div>
-            <Profile />
-            <CompletedChallenges />
+        <CountdownProvider>
+          <section>
+            <div>
+              <Profile />
+              <CompletedChallenges />
 
-            <Countdown />
-          </div>
-          <div>
-            <ChallengeBox />
-          </div>
-        </section>
+              <Countdown />
+            </div>
+            <div>
+              <ChallengeBox />
+            </div>
+          </section>
+        </CountdownProvider>
+
       </div>
     </ChallengesProvider>
   );
