@@ -79,6 +79,6 @@
   border-bottom: 4px solid var(--green);
 }
 
-.countdownButton:disabled > svg{
+.countdownButton > svg{
   margin-left: 16px;
 }
