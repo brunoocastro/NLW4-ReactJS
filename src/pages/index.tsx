@@ -23,8 +23,6 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
-  console.log(props);
-
   const { minutes, seconds, isActive } = useContext(CountdownContext);
 
   return (
@@ -55,7 +53,6 @@ export default function Home(props: HomeProps) {
             </div>
           </section>
         </CountdownProvider>
-
       </div>
     </ChallengesProvider>
   );

@@ -9,10 +9,6 @@ export function ChallengeBox() {
   );
   const { resetCountdown } = useContext(CountdownContext);
 
-  console.log("startNewChallenge", startNewChallenge);
-  console.log("useContext(ChallengesContext)", useContext(ChallengesContext));
-  console.log("ChallengesContext", ChallengesContext);
-
   function handleChallengeSucceeded() {
     completeChallenge();
     resetCountdown();
